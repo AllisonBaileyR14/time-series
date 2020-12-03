@@ -1,0 +1,64 @@
+---
+title: "lab_5_bailey"
+author: "Allison Bailey"
+date: "2/6/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Basic Steps in Time Series Analysis
+
+# Explore data - Does it look like there's a trend? (additive or multiplicative, cyclicle, seasonality, trend, random, observed)
+# Initial analyses(decompose the data)
+# Select model type (or ask R for help)
+# Describe existing trends/patterns
+# Possibly forecast
+# Analyze residulas 
+
+# Time series regression: Model temperature based on existing temperatures. 
+# Types of Time-series analysles:
+# - Ordinary regresson (linear or nonlinear) using time as the independent variable
+# - Purely random or random walk (Doesn't depend on anything.  Chaotic.)
+# - Moving average (MA) Time series analysis and forecasting.  You can make predictions off of this.
+# - Autoregressive integrated moving average (ARIMA)
+
+# Autoregression Model:
+
+# X(t) = B(0) + B(1)X(t-1)
+
+# X(t) is the estimated value of the measured variable
+
+# Assumptions: 
+# - Linear Trend between observations
+# Normally distributed errors (QQ plot, histogram)
+# Error Independence
+# Stationary Data
+
+# Combine AR + MA (Mixed Model)
+# At least 40 historic observations
+# ARIMA - Expnential Weighted Moving Average (Exponential Smoothing)
+# - Recent observations are given exponentially more "weight" in forecasting a value than more temporally distant values.
+# - Differs from simple "moving average"
+
+# Exponential Smoothing gives more weight to more recent observations when we try to make predictions in to the future. 
+
+# - Level, Trend, Seasonal, Forecast for period (Must have seasonality for triple eponential HW)
+# ex air_hw <- HoltWinters(AirPassengers, seasonal = "multiplicative")
+#    hw_forecast <-  forecast(air_hw, h = 48)
+
+# ARIMA:
+# - Autoregressive process + Moving Average process
+# - fable:: ARIMA() "Searches through the model space.  stats::arima()and allows ARIMA models to be used in teh fable framework.  
+
+# Risks Associated with Forecasting
+# 1. Intrinsic Risk- Risk you can't avoid.
+# 2. Parameter Risk- Errors assoc. with model coefficients. "Blur of history": no pattern stays the same forever. * Usually less than intrinsic risk. You can improve by having more data (sometiems)
+
+# Model Risk:  YOU CHOSE THE WRONG MODEL
+# 3. Model Risk
+```
+
